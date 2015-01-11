@@ -11,7 +11,7 @@ body {
     opacity: 0.8;
 }
 
-.fa-bell {
+.bell-wrapper {
     -webkit-transform: rotate(-30deg);
     transform: rotate(-30deg);
 }
@@ -24,3 +24,13 @@ body {
     font-size: 20em;
 }
 
+.bell-img {
+    background: url('dingding.jpg') no-repeat;
+    background-size: 100%;
+    position: absolute;
+    display: none;
+    top: 100px;
+    left: 35%;
+    right: 35%;
+    height: 300px;
+}

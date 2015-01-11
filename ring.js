@@ -2,7 +2,8 @@ $(document).ready(function () {
 
     var timerId = null;
     var ringMillis = 500;
-    var bell = $('.fa-bell');
+    var bellWrapper = $('.bell-wrapper');
+    var bellImage = $('.bell-img');
     var negativeAngle = 1;
     var angle = 30;
     var audioElement = document.createElement('audio');
@@ -10,20 +11,22 @@ $(document).ready(function () {
     audioElement.addEventListener("load", function() {
         audioElement.play();
     }, true);
-    bell.click(onBellClick);
+    bellWrapper.click(onBellClick);
 
     function onBellClick() {
         if (timerId) {
+            bellImage.hide();
             window.clearTimeout(timerId);
             timerId = null;
         } else {
+            bellImage.show();
             timerId = window.setInterval(ring, ringMillis);
         }
     }
 
     function ring() {
         var newAngle = negativeAngle * angle;
-        bell.css('transform', 'rotate(' + newAngle + 'deg)');
+        bellWrapper.css('transform', 'rotate(' + newAngle + 'deg)');
         negativeAngle = negativeAngle * -1;
         if (audioElement.play) {
             audioElement.play();
