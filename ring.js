@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     var timerId = null;
-    var ringMillis = 500;
+    var ringMillis = 1000;
     var bellWrapper = $('.bell-wrapper');
     var bellImage = $('.bell-img');
     var negativeAngle = 1;
@@ -15,11 +15,11 @@ $(document).ready(function () {
 
     function onBellClick() {
         if (timerId) {
-            bellImage.hide();
+            bellImage.css('opacity', '0');
             window.clearTimeout(timerId);
             timerId = null;
         } else {
-            bellImage.show();
+            bellImage.css('opacity', '1');
             timerId = window.setInterval(ring, ringMillis);
         }
     }
