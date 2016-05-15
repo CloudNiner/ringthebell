@@ -3,7 +3,7 @@ $(document).ready(function () {
     var timerId = null;
     var ringMillis = 1000;
     var bellWrapper = $('.bell-wrapper');
-    var bellImage = $('.bell-img');
+    var bellImage = $('.img-ring');
     var negativeAngle = 1;
     var angle = 30;
     var audioElement = document.createElement('audio');
